@@ -7,14 +7,21 @@ All of these controls are demonstrated in the example project.
 ## TextFieldGlow
 Extension to UITextField which gives a glowing border when the control becomes firstResponder
 
+### Initialisation
+- Simply include the TextFieldGlow.swift file in your project
+- Add a UITextField to your view, and change the class to TextFieldGlow
+
 ## TextFieldFloatLabel
 Extension to UITextField which includes a floating label which can be used as a placeholder, and also glowing border
+
+### Initialisation
+- Simply include the TextFieldFloatLabel.swift file in your project
+- Add a UITextField to your view, and change the class to TextFieldFloatLabel
 
 ## TextFieldPopupView
 Extension to UITextField which gives popup picker view
 
 ### Initialisation
-
 - Simply include the TextFieldPopupView.swift file in your project
 - Add a UITextField to your view, and change the class to TextFieldPopupView
 - By default, the control will display 5 lines in the popup view, but you can change that in Storyboard, or through code at any time.  You will not be able to display more than 12 lines, or fewer than 1.
@@ -22,7 +29,7 @@ Extension to UITextField which gives popup picker view
 - You must set the Tag value of the control to a unique value, as this is used to identify each control
 
 ### Usage
-------------------------------
+
 Create outlets for your text controls, and create data sets
 ```swift
     @IBOutlet weak var textFieldPopup1: TextFieldPopupView!

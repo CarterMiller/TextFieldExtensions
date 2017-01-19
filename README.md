@@ -28,11 +28,7 @@ Extension to UITextField which gives a glowing border when the control becomes f
 
 ## TextFieldFloatLabel
 Extension to UITextField which includes a floating label which can be used as a placeholder, and also glowing border
-
-### Initialisation
-- Simply include the TextFieldFloatLabel.swift file in your project
-- Add a UITextField to your view, and change the class to TextFieldFloatLabel
-
+https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/Floating%20Text.png?raw=true
 ## TextFieldPopupView
 Extension to UITextField which gives popup picker view
 

@@ -1,8 +1,23 @@
-# TextFieldExtensions
+# UITextFieldExtendedView
 Extensions to UITextField in swift 3 - glowing edges, floating labels and pickerView
+
+With a single class `UITextFieldExtendedView` you can have any combination of glowing edges, floating placeholders and popup pickerViews.
 
 All of these controls are demonstrated in the example project.
 
+## Usage
+Copy the class files into your project
+- UITextFieldExtendedView - global functions and variables
+- UITextFieldExtendedViewFloat - extensions to support the floating placeholder text
+- UITextFieldExtendedViewGlow - extensions to support glowing edges
+- UITextFieldExtendedView - extensions to support popup pickerViews
+
+To use the controls, add a UITextField to a view, and change the class to UItextFieldExtendedView
+
+You can then set which of the extended attributes you want, either in the storyboard or code.  By default, all options are set to false, and the control will operate as a UITextField.
+- shouldDisplayPopup 
+- shouldDisplayLabel
+- shouldDisplayGlow
 
 ## TextFieldGlow
 Extension to UITextField which gives a glowing border when the control becomes firstResponder
@@ -70,7 +85,7 @@ In viewDidLoad, initialise the text controls with their datasets.  You can also 
 ```
 
 
-The TextFieldPopupViewDelegate has to implement a single function to be informed of changes.  This function returns the Tag value of the text control, so that you can take any appropriate action 
+The TextFieldPopupViewDelegate has to implement a single function to be informed of changes.  This function returns the Tag value of the text control, so that you can take any appropriate action.  If all that is required is to update the text field, then you don't need to do anything more in this function.
 
 ```swift
     // TextFieldPopupViewDelegate

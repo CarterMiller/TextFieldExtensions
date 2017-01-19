@@ -20,39 +20,40 @@ You can then set which of the extended attributes you want, either in the storyb
 - shouldDisplayGlow
 
 ## TextFieldGlow
-Extension to UITextField which gives a glowing border when the control becomes firstResponder
+- shouldDisplayPopup    = false
+- shouldDisplayLabel    = false
+- shouldDisplayGlow     = true 
 
-### Initialisation
-- Simply include the TextFieldGlow.swift file in your project
-- Add a UITextField to your view, and change the class to TextFieldGlow
+![Glowing](https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/Glowing.png)
+
 
 ## TextFieldFloatLabel
-Extension to UITextField which includes a floating label which can be used as a placeholder, and also glowing border
-https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/Floating%20Text.png?raw=true
+- shouldDisplayPopup    = false
+- shouldDisplayLabel    = true
+- shouldDisplayGlow     = true / false
+
+![Floating Text](https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/Floating%20Text.png)
+
 ## TextFieldPopupView
-Extension to UITextField which gives popup picker view
+- shouldDisplayPopup    = true
+- shouldDisplayLabel    = true / false
+- shouldDisplayGlow     = false
+
+![Popup](https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/Popup.png)
+
+
+- shouldDisplayPopup    = true
+- shouldDisplayLabel    = true / false
+- shouldDisplayGlow     = true
+
+![Popup GLowing](https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/Popup%20Glowing.png)
 
 ### Initialisation
-- Simply include the TextFieldPopupView.swift file in your project
-- Add a UITextField to your view, and change the class to TextFieldPopupView
 - By default, the control will display 5 lines in the popup view, but you can change that in Storyboard, or through code at any time.  You will not be able to display more than 12 lines, or fewer than 1.
 - Each TextFieldPopupView control has an associated dataset, which defines the entries presented in the picker view
 - You must set the Tag value of the control to a unique value, as this is used to identify each control
 
-### Usage
-
-Create outlets for your text controls, and create data sets
-```swift
-    @IBOutlet weak var textFieldPopup1: TextFieldPopupView!
-    @IBOutlet weak var textFieldPopup2: TextFieldPopupView!
-    @IBOutlet weak var textFieldPopup3: TextFieldPopupView!
-    
-    var sampleData1 = ["one", "two", "three", "four", "five"]
-    var sampleData2 = ["cat", "dog", "mouse", "horse", "hamster", "snake"]
-    var sampleData3 = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
- 
-```
-In viewDidLoad, initialise the text controls with their datasets.  You can also add a tapGesture recogniser, so that you can hide the popup views when the user taps anywhere else on the screen.
+Initialise the text controls with their datasets - in viewDidLoad, or as required.  You can also add a tapGesture recogniser, so that you can hide the popup views when the user taps anywhere else on the screen.
 ```swift
     override func viewDidLoad()
     {
@@ -66,7 +67,6 @@ In viewDidLoad, initialise the text controls with their datasets.  You can also 
         textFieldPopup3.setup(dataSet: sampleData3)
         textFieldPopup3.tag = 3
         textFieldPopup3.delegatePopup = self
-
 
         // the popup views will disappear when a value is selected
         // but to clear them when the user taps anywhere on the view, add this gesture recogniser

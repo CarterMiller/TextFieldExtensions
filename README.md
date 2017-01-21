@@ -1,5 +1,5 @@
 # UITextFieldExtendedView
-Extensions to UITextField in swift 3 - glowing edges, floating labels and pickerView
+Extensions to UITextField in swift 3 - glowing edges, floating labels, pickerView and multi select
 
 With a single class `UITextFieldExtendedView` you can have any combination of glowing edges, floating placeholders and popup pickerViews.
 
@@ -11,6 +11,7 @@ Copy the class files into your project
 - UITextFieldExtendedViewFloat - extensions to support the floating placeholder text
 - UITextFieldExtendedViewGlow - extensions to support glowing edges
 - UITextFieldExtendedView - extensions to support popup pickerViews
+- UITextFieldExtendedMultiPopup - extensions to support multi-selection.  Select from a dataset.
 
 To use the controls, add a UITextField to a view, and change the class to UItextFieldExtendedView
 
@@ -47,6 +48,11 @@ You can then set which of the extended attributes you want, either in the storyb
 - shouldDisplayGlow     = true
 
 ![Popup GLowing](https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/Popup%20Glowing.png)
+
+
+- shouldDisplayPopup    = true
+- shouldDisplayLabel    = true / false
+- shouldDisplayGlow     = true
 
 ### Initialisation
 - By default, the control will display 5 lines in the popup view, but you can change that in Storyboard, or through code at any time.  You will not be able to display more than 12 lines, or fewer than 1.

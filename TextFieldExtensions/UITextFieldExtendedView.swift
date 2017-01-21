@@ -10,13 +10,14 @@ import UIKit
 import QuartzCore
 
 
-protocol UITextFieldExtendedDelegate
+@objc protocol UITextFieldExtendedDelegate
 {
     // only really required for the popup view, but available for everything
-    func popupPickerViewChanged(valueReturn : String, controlTag: Int, valueChanged : Bool)
+    @objc optional func popupPickerViewChanged(valueReturn : String, controlTag: Int, valueChanged : Bool)
+    @objc optional func multiPopupUpdated(valueReturn : [String], controlTag: Int, valueChanged : Bool)
 }
 
-@IBDesignable class UITextFieldExtendedView: TextFieldFloatLabel
+@IBDesignable class UITextFieldExtendedView: UITextField
 {
     // define text field type
     @IBInspectable var shouldDisplayPopup : Bool   = false
@@ -78,8 +79,8 @@ protocol UITextFieldExtendedDelegate
     
     
     // popup declarations
-    var dataSet : [String]      = []
-    var valueInit : String      = ""
+    var dataSet : [String]          = []
+    var valueInit : String          = ""
     
     var pickerView : UIPickerView = UIPickerView()
     var blurEffectView: UIVisualEffectView!
@@ -87,7 +88,11 @@ protocol UITextFieldExtendedDelegate
     
     @IBInspectable var numberOfLines            : Int       = 5
     
+    // multiPopup
+    var dataSetSelected : [String]?  // if this is nil, display a pickerView.  If defined (even if empty) display multiPopup
+    var dataSetSelectedFlag : [Bool] = []
     
+    var viewMultiPopup              = UIView()
     
     // MARK:- Init
     required init(coder aDecoder:NSCoder) {
@@ -116,7 +121,14 @@ protocol UITextFieldExtendedDelegate
                 {
                     if control.tag == self.tag
                     {
-                        control.displayPopup()
+                        if dataSetSelected == nil
+                        {
+                            control.displayPopup()
+                        }
+                        else
+                        {
+                            control.displayMultiPopup()
+                        }
                     }
                     else
                     {
@@ -177,18 +189,4 @@ extension UIView
 }
 
 
-
-
-
-@IBDesignable class TextFieldFloatLabel: UITextField
-{
-    
-    // MARK:- Public Methods
-    
-
-    // MARK:- Highlight Edge
-    
-    
-     
-}
 

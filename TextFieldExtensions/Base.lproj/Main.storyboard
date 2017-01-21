@@ -88,7 +88,7 @@
                                     <outlet property="delegate" destination="aeQ-gF-kTa" id="ca8-xL-svc"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Label could go here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJC-mu-Uog" customClass="UITextFieldExtendedView" customModule="TextFieldExtensions" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Label could go here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJC-mu-Uog" customClass="UITextFieldExtendedView" customModule="TextFieldExtensions" customModuleProvider="target">
                                 <rect key="frame" x="194" y="198.5" width="165" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -122,16 +122,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TextFieldMulti :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oia-SZ-jbf">
+                                <rect key="frame" x="16" y="305" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-pg-5mi" customClass="UITextFieldExtendedView" customModule="TextFieldExtensions" customModuleProvider="target">
+                                <rect key="frame" x="152" y="300.5" width="207" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldDisplayPopup" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldDisplayLabel" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldDisplayGlow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="aeQ-gF-kTa" id="02a-js-IRy"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="J0M-fi-NaD" firstAttribute="centerY" secondItem="nlt-Ix-kDc" secondAttribute="centerY" id="4rR-3B-RfS"/>
+                            <constraint firstItem="oia-SZ-jbf" firstAttribute="top" secondItem="HFc-T3-SjY" secondAttribute="bottom" constant="30" id="4rd-mD-2si"/>
                             <constraint firstItem="m2c-dm-tM7" firstAttribute="leading" secondItem="F0z-xr-vS8" secondAttribute="leading" id="7Mp-0V-l6H"/>
                             <constraint firstItem="LJC-mu-Uog" firstAttribute="trailing" secondItem="2cB-0E-F2c" secondAttribute="trailing" id="8Hc-aT-mol"/>
                             <constraint firstItem="J0M-fi-NaD" firstAttribute="trailing" secondItem="2cB-0E-F2c" secondAttribute="trailing" id="DSe-sF-0DJ"/>
                             <constraint firstItem="F0z-xr-vS8" firstAttribute="leading" secondItem="kco-Af-AI5" secondAttribute="leadingMargin" id="FzL-CK-oW7"/>
                             <constraint firstItem="GUb-10-LYs" firstAttribute="top" secondItem="nlt-Ix-kDc" secondAttribute="bottom" constant="30" id="GIR-Uj-dL8"/>
                             <constraint firstItem="nlt-Ix-kDc" firstAttribute="leading" secondItem="F0z-xr-vS8" secondAttribute="leading" id="Iv4-J6-Sx5"/>
+                            <constraint firstItem="bUG-pg-5mi" firstAttribute="leading" secondItem="oia-SZ-jbf" secondAttribute="trailing" constant="20" id="Ivt-L4-jgo"/>
+                            <constraint firstItem="oia-SZ-jbf" firstAttribute="leading" secondItem="HFc-T3-SjY" secondAttribute="leading" id="KQN-v0-6hY"/>
                             <constraint firstItem="m2c-dm-tM7" firstAttribute="top" secondItem="F0z-xr-vS8" secondAttribute="bottom" constant="30" id="Pfr-6p-tzi"/>
                             <constraint firstItem="ibe-tw-36h" firstAttribute="centerY" secondItem="m2c-dm-tM7" secondAttribute="centerY" id="Rno-yx-Y1C"/>
                             <constraint firstItem="Aju-fx-lNb" firstAttribute="leading" secondItem="HFc-T3-SjY" secondAttribute="trailing" constant="20" id="T1q-sH-Kyw"/>
@@ -143,11 +166,13 @@
                             <constraint firstItem="2cB-0E-F2c" firstAttribute="leading" secondItem="F0z-xr-vS8" secondAttribute="trailing" constant="20" id="dQd-dp-zgj"/>
                             <constraint firstItem="F0z-xr-vS8" firstAttribute="top" secondItem="zLe-2g-XVd" secondAttribute="bottom" constant="30" id="fH5-iM-Uq5"/>
                             <constraint firstItem="GUb-10-LYs" firstAttribute="leading" secondItem="F0z-xr-vS8" secondAttribute="leading" id="giS-vH-bZy"/>
+                            <constraint firstItem="bUG-pg-5mi" firstAttribute="centerY" secondItem="oia-SZ-jbf" secondAttribute="centerY" id="iWI-gP-CY1"/>
                             <constraint firstItem="LJC-mu-Uog" firstAttribute="leading" secondItem="GUb-10-LYs" secondAttribute="trailing" constant="20" id="mln-zy-aHZ"/>
                             <constraint firstItem="Aju-fx-lNb" firstAttribute="centerY" secondItem="HFc-T3-SjY" secondAttribute="centerY" id="p4Q-Rs-pHx"/>
                             <constraint firstItem="nlt-Ix-kDc" firstAttribute="top" secondItem="m2c-dm-tM7" secondAttribute="bottom" constant="30" id="r0Y-Dq-2Zn"/>
                             <constraint firstItem="Aju-fx-lNb" firstAttribute="trailing" secondItem="2cB-0E-F2c" secondAttribute="trailing" id="uww-V8-K3O"/>
                             <constraint firstItem="LJC-mu-Uog" firstAttribute="centerY" secondItem="GUb-10-LYs" secondAttribute="centerY" id="wsr-MS-HiZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bUG-pg-5mi" secondAttribute="trailing" id="wt6-0a-zKe"/>
                             <constraint firstItem="ibe-tw-36h" firstAttribute="leading" secondItem="m2c-dm-tM7" secondAttribute="trailing" constant="20" id="yhA-4U-awa"/>
                             <constraint firstItem="ibe-tw-36h" firstAttribute="trailing" secondItem="2cB-0E-F2c" secondAttribute="trailing" id="zEx-Ze-GDq"/>
                         </constraints>
@@ -158,6 +183,7 @@
                         <outlet property="textField3" destination="J0M-fi-NaD" id="cEl-4C-fEe"/>
                         <outlet property="textField4" destination="LJC-mu-Uog" id="Qrr-EL-PZl"/>
                         <outlet property="textField5" destination="Aju-fx-lNb" id="Zb1-4P-2Bq"/>
+                        <outlet property="textField6" destination="bUG-pg-5mi" id="BTQ-4g-eMv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGW-Ei-eaS" userLabel="First Responder" sceneMemberID="firstResponder"/>

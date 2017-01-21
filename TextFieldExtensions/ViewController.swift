@@ -17,10 +17,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextFieldExtended
     @IBOutlet weak var textField3: UITextFieldExtendedView!
     @IBOutlet weak var textField4: UITextFieldExtendedView!
     @IBOutlet weak var textField5: UITextFieldExtendedView!
+    @IBOutlet weak var textField6: UITextFieldExtendedView!
        
     var sampleData1 = ["one", "two", "three", "four", "five"]
     var sampleData2 = ["cat", "dog", "mouse", "horse", "hamster", "snake"]
     var sampleData3 = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    
+    var dataSelected = ["Monday", "Wednesday", "Saturday"]
     
     override func viewDidLoad()
     {
@@ -29,6 +32,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextFieldExtended
         // set up the popup data.  You can do this at any time
         textField2.setupPopup(dataSet: sampleData2, controlTag: 2,  delegate: self)
         textField3.setupPopup(dataSet: sampleData3, controlTag: 3,  delegate: self)
+        
+        textField6.setupPopup(dataSet: sampleData3, dataSetSelected: dataSelected, controlTag: 5,  delegate: self)
 
         // but to stop editing when the user taps anywhere on the view, add this gesture recogniser
         let tapGestureBackground = UITapGestureRecognizer(target: self, action: #selector(self.backgroundTapped(_:)))
@@ -38,6 +43,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextFieldExtended
     
     func backgroundTapped(_ sender: UITapGestureRecognizer)
     {
+        // don't go away if the control tapped is on viewDisplay
+        print(sender.view?.frame)
+        
         view.endEditingWithPopups(true)       // end editing for any UITextField controls, and also for standard controls
     }
     
@@ -49,6 +57,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextFieldExtended
     }
     
     // UITextFieldExtendedDelegate
+    
+    func multiPopupUpdated(valueReturn: [String], controlTag: Int, valueChanged: Bool)
+    {
+        var text : String = ""
+        
+        for textReturn in valueReturn
+        {
+            text = text + textReturn
+            
+        }
+        if controlTag == 5
+        {
+            textField6.text = text
+        }
+    }
+    
     func popupPickerViewChanged(valueReturn : String, controlTag : Int, valueChanged : Bool)
     {
         if valueChanged == false

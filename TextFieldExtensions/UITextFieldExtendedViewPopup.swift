@@ -71,6 +71,11 @@ extension UITextFieldExtendedView : UIPickerViewDelegate, UIPickerViewDataSource
             return
         }
         
+        if dataSetSelected != nil
+        {
+            return
+        }
+        
         // hide the keyboard
         // this is NOT an ideal situation, as the UIView now thinks this control
         // has finished editing, but it;s the only way I can find to hide the keyboard :-(
@@ -191,7 +196,7 @@ extension UITextFieldExtendedView : UIPickerViewDelegate, UIPickerViewDataSource
         
         if delegatePopup != nil
         {
-            delegatePopup!.popupPickerViewChanged(valueReturn: dataSet[row], controlTag: self.tag, valueChanged: (dataSet[row] != valueInit))
+            delegatePopup!.popupPickerViewChanged!(valueReturn: dataSet[row], controlTag: self.tag, valueChanged: (dataSet[row] != valueInit))
         }
         
         valueInit = dataSet[row]

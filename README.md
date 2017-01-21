@@ -97,7 +97,9 @@ To create a multiPopup, simply define a selected array as well
     textField6.setupPopup(dataSet: sampleData3, dataSetSelected: dataSelected, controlTag: 5,  delegate: self)
 ```
 
-The TextFieldPopupViewDelegate has to implement a single function to be informed of changes.  This function returns the Tag value of the text control, so that you can take any appropriate action.  If all that is required is to update the text field, then you don't need to do anything more in this function.
+There are two optional protocol functions to inform of updates.  Each function returns the Tag value of the text control, so that you can take any appropriate action.  
+
+For TextFieldPopupView, if all that is required is to update the text field, then you don't need to do anything more in this function.
 
 ```swift
     // TextFieldPopupViewDelegate
@@ -112,14 +114,30 @@ The TextFieldPopupViewDelegate has to implement a single function to be informed
         {
            // do something for control 1
         }
-        if controlTag == 2
-        {
-           // do something for control 2
-        }
-        if controlTag == 3
-        {
-           // do something for control 3
-        }
+       
     }
 
 ```
+
+TextFieldMultiPopup will not directly update the TextField, so you will need to implement the protocol function to see any changes in ViewController
+
+```swift
+
+    func multiPopupUpdated(valueReturn: [String], controlTag: Int, valueChanged: Bool)
+    {
+        var text : String = ""
+        // build up a simple string of the selected values, and display that
+        for textReturn in valueReturn
+        {
+            text = text + textReturn
+            
+        }
+        if controlTag == 5
+        {
+            textField6.text = text
+        }
+    }
+    
+
+```
+

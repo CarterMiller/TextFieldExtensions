@@ -89,7 +89,13 @@ Initialise the text controls with their datasets - in viewDidLoad, or as require
         view.endEditingWithPopups(true)     // end editing for any UITextField controls, and also for standard controls
     }
 ```
-
+To create a multiPopup, simply define a selected array as well
+```swift
+    
+    var dataSelected = ["Monday", "Wednesday", "Saturday"]
+   
+    textField6.setupPopup(dataSet: sampleData3, dataSetSelected: dataSelected, controlTag: 5,  delegate: self)
+```
 
 The TextFieldPopupViewDelegate has to implement a single function to be informed of changes.  This function returns the Tag value of the text control, so that you can take any appropriate action.  If all that is required is to update the text field, then you don't need to do anything more in this function.
 

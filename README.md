@@ -106,19 +106,26 @@ For TextFieldPopupView, if all that is required is to update the text field, the
 
 ```swift
     // TextFieldPopupViewDelegate
-    func popupPickerViewChanged(valueReturn : String, controlTag : Int, valueChanged : Bool)
+    func popupPickerViewChanged(valueReturn : String, control : UITextFieldExtendedView, valueChanged : Bool)
     {
         if valueChanged == false
         {
             return
         }
-        
-        if controlTag == 1
+        if control.tag == 1
         {
-           // do something for control 1
+            // do something for control 1
         }
-       
+        if control.tag == 2
+        {
+            // do something for control 2
+        }
+        if control.tag == 3
+        {
+            // do something for control 3
+        }
     }
+
 
 ```
 
@@ -126,20 +133,27 @@ TextFieldMultiPopup will not directly update the TextField, so you will need to 
 
 ```swift
 
-    func multiPopupUpdated(valueReturn: [String], controlTag: Int, valueChanged: Bool)
+       func multiPopupUpdated(valueReturn: [String], control: UITextFieldExtendedView, valueChanged: Bool)
     {
         var text : String = ""
-        // build up a simple string of the selected values, and display that
-        for textReturn in valueReturn
+
+        for dataEntry in valueReturn
         {
-            text = text + textReturn
+            text += dataEntry
             
+            if dataEntry != valueReturn.last
+            {
+                text += ", "
+            }
         }
-        if controlTag == 5
+
+        if control.tag == 5
         {
-            textField6.text = text
+            control.text = text
         }
     }
+    
+
     
 
 ```

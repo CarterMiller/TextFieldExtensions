@@ -30,8 +30,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextFieldExtended
         super.viewDidLoad()
         
         // set up the popup data.  You can do this at any time
-        textField2.setupPopup(dataSet: sampleData2, controlTag: 2,  delegate: self)
-        textField3.setupPopup(dataSet: sampleData3, controlTag: 3,  delegate: self)
+        textField2.setupPopup(dataSet: sampleData2, controlTag: textField2.tag,  delegate: self)
+        textField3.setupPopup(dataSet: sampleData3, controlTag: textField3.tag,  delegate: self)
         
         textField6.setupPopup(dataSet: sampleData3, dataSetSelected: dataSelected, controlTag: 5,  delegate: self)
 
@@ -43,9 +43,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextFieldExtended
     
     func backgroundTapped(_ sender: UITapGestureRecognizer)
     {
-        // don't go away if the control tapped is on viewDisplay
-        print(sender.view?.frame)
-        
         view.endEditingWithPopups(true)       // end editing for any UITextField controls, and also for standard controls
     }
     
@@ -79,9 +76,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextFieldExtended
         {
             return
         }
-        
-        print(controlTag)
-        
         if controlTag == 1
         {
             // do something for control 1

@@ -19,6 +19,11 @@ import UIKit
 import QuartzCore
 
 
+class UIViewPopup : UIView
+{
+    let id = "POPUP"
+}
+
 extension UITextFieldExtendedView 
 {
     
@@ -69,15 +74,17 @@ extension UITextFieldExtendedView
         // has finished editing, but it;s the only way I can find to hide the keyboard :-(
         _ = self.resignFirstResponder()
         
-        // initialise dataSetSelectedFlag
         
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellPopup")
+        
+        // initialise dataSetSelectedFlag
         dataSetSelectedFlag.removeAll()
         for dataEntry in dataSet
         {
             dataSetSelectedFlag.append((dataSetSelected?.contains(dataEntry))!)
         }
 
-        numberOfLines = dataSet.count + 4
+//        numberOfLines = dataSet.count + 2
         if numberOfLines < 2
         {
             numberOfLines = 2
@@ -87,11 +94,14 @@ extension UITextFieldExtendedView
             numberOfLines = 12
         }
         
-        let width   = self.frame.size.width
-        let height  = self.frame.size.height * CGFloat(numberOfLines)
+        // find the position on the main screen
+        let globalPoint = self.superview?.convert(self.frame.origin, to: nil)
         
-        var originX = self.frame.origin.x
-        var originY = self.frame.origin.y + self.frame.height / 2 - height / 2
+        let width   = self.frame.size.width
+        let height  = self.frame.size.height * (CGFloat(numberOfLines) + 1.1) + 100 // add 1/2 line so that you can see if there are more to scroll down to
+        
+        var originX = globalPoint!.x//self.frame.origin.x
+        var originY = globalPoint!.y + self.frame.height / 2 - height / 2  //self.frame.origin.y + self.frame.height / 2 - height / 2
         
         if originX < 0
         {
@@ -113,7 +123,8 @@ extension UITextFieldExtendedView
         
         let frameRect = CGRect(x: originX, y: originY, width: width, height: height)
         
-        viewPopup = UIView(frame: frameRect)
+        //viewPopup = UIView(frame: frameRect)
+        viewPopup = UIViewPopup(frame: frameRect)
         viewPopup.backgroundColor = UIColor.clear
         
         let viewDisplay = UIView(frame: viewPopup.bounds)
@@ -126,9 +137,6 @@ extension UITextFieldExtendedView
         
         
         viewMultiPopup = UIView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        let tapGesturePopup = UITapGestureRecognizer(target: self, action: #selector(self.popupTapped(_:)))
-        viewPopup.addGestureRecognizer(tapGesturePopup)
-
         
         // add label and switch for each dataSet
         // set switch value based on dataSetSelected
@@ -137,6 +145,7 @@ extension UITextFieldExtendedView
         // need something to trap this
         if dataSet.count > 0
         {
+            /****
             let xLabel      = CGFloat(20)
             var yLabel      = CGFloat(20)
             let xSwitch     = width - CGFloat(70)
@@ -147,7 +156,6 @@ extension UITextFieldExtendedView
             {
                 let label = UILabel(frame: CGRect(x: xLabel, y: yLabel, width: xSwitch - xLabel, height: 20))
                 label.text = dataEntry
-                print(label.frame)
             
                 let dataSwitch = UISwitch(frame: CGRect(x: xSwitch, y: yLabel, width: 100, height: 15))
                 //dataSwitch.setOn(dataSetSelected!.contains(dataEntry), animated: true)
@@ -161,6 +169,11 @@ extension UITextFieldExtendedView
                 
                 yLabel += ySpacing
             }
+ ****/
+            tableView.frame         =   CGRect(x: 0, y: 0, width: width, height: height - 40);
+            tableView.delegate      =   self
+            tableView.dataSource    =   self
+            viewMultiPopup.addSubview(tableView)
             
             let cmdOK = UIButton(frame: CGRect(x: (width - 100) / 2, y: height - 40, width: 100, height: 30))
             cmdOK.setTitle("OK", for: .normal)
@@ -170,7 +183,10 @@ extension UITextFieldExtendedView
             viewMultiPopup.addSubview(cmdOK)
         }
         viewDisplay.addSubview(viewMultiPopup)
-        
+        if dataSet.count > numberOfLines
+        {
+            tableView.flashScrollIndicators()
+        }
         
         if shouldDisplayGlow
         {
@@ -196,28 +212,24 @@ extension UITextFieldExtendedView
             viewPopup.addSubview(viewDisplay)
         }
         
-        self.superview?.addSubview(viewPopup)
+        //self.superview?.addSubview(viewPopup)
         
+        UIApplication.shared.keyWindow?.addSubview(viewPopup)
+        tableView.reloadData()
     }
 
 
+/**
     func switchChanged(_ mySwitch: UISwitch!)
     {
-        print("switch")
         let index = mySwitch.tag
         dataSetSelectedFlag[index] = !dataSetSelectedFlag[index]
     }
-
-    func popupTapped(_ sender: UITapGestureRecognizer)
-    {
-        // don't go away if the control tapped is on viewDisplay
-        print("popup")
-        print(sender.view?.frame)
-    }
+***/
+    
     
     func cmdOK(sender: UIButton!)
     {
-        print("OK")
         var returnArray : [String] = []
         for (index, dataEntry) in dataSet.enumerated()
         {
@@ -231,4 +243,47 @@ extension UITextFieldExtendedView
 
         self.removePopup()
     }
+}
+
+
+
+extension UITextFieldExtendedView : UITableViewDelegate, UITableViewDataSource
+{
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return dataSet.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        dataSetSelectedFlag[indexPath.row] = !dataSetSelectedFlag[indexPath.row]
+        tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellPopup", for: indexPath) as UITableViewCell
+        
+        cell.textLabel?.text = dataSet[indexPath.row]
+        
+        if dataSetSelectedFlag[indexPath.row]
+        {
+            cell.accessoryType = .checkmark
+        }
+        else
+        {
+            cell.accessoryType = .none
+        }
+        
+        
+        return cell
+    }
+    
+    
+    
 }

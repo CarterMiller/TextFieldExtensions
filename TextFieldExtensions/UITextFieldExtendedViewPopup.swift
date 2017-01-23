@@ -61,7 +61,11 @@ extension UITextFieldExtendedView : UIPickerViewDelegate, UIPickerViewDataSource
         {
             return
         }
-        viewPopup.removeFromSuperview()
+        
+        if viewPopup != nil
+        {
+            viewPopup.removeFromSuperview()
+        }
     }
     
     func displayPopup()
@@ -81,11 +85,16 @@ extension UITextFieldExtendedView : UIPickerViewDelegate, UIPickerViewDataSource
         // has finished editing, but it;s the only way I can find to hide the keyboard :-(
         _ = self.resignFirstResponder()
         
+        
+        // find the position on the main screen
+        let globalPoint = self.superview?.convert(self.frame.origin, to: nil)
+        
         let width   = self.frame.size.width
         let height  = self.frame.size.height * CGFloat(numberOfLines)
         
-        var originX = self.frame.origin.x
-        var originY = self.frame.origin.y + self.frame.height / 2 - height / 2
+        var originX = globalPoint!.x//self.frame.origin.x
+        var originY = globalPoint!.y + self.frame.height / 2 - height / 2  //self.frame.origin.y + self.frame.height / 2 - height / 2
+   
         
         if originX < 0
         {
@@ -107,7 +116,8 @@ extension UITextFieldExtendedView : UIPickerViewDelegate, UIPickerViewDataSource
         
         let frameRect = CGRect(x: originX, y: originY, width: width, height: height)
         
-        viewPopup = UIView(frame: frameRect)
+        //viewPopup = UIView(frame: frameRect)
+        viewPopup = UIViewPopup(frame: frameRect)
         viewPopup.backgroundColor = UIColor.clear
         
         let viewDisplay = UIView(frame: viewPopup.bounds)
@@ -150,7 +160,10 @@ extension UITextFieldExtendedView : UIPickerViewDelegate, UIPickerViewDataSource
             viewPopup.addSubview(viewDisplay)
         }
         
-        self.superview?.addSubview(viewPopup)
+     //   self.superview?.addSubview(viewPopup)
+        
+        UIApplication.shared.keyWindow?.addSubview(viewPopup)
+
     }
     
     func findIndexInitial() -> Int

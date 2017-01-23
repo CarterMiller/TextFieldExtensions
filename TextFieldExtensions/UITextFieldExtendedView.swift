@@ -91,7 +91,7 @@ import QuartzCore
     // multiPopup
     var dataSetSelected : [String]?  // if this is nil, display a pickerView.  If defined (even if empty) display multiPopup
     var dataSetSelectedFlag : [Bool] = []
-    
+    var tableView: UITableView      = UITableView()
     var viewMultiPopup              = UIView()
     
     // MARK:- Init
@@ -115,6 +115,19 @@ import QuartzCore
         {
             // remove any popups that have already been displayed by other controls
             // and present the popup for self
+
+            // remove them first
+            UIApplication.shared.keyWindow?.addSubview(viewPopup)
+
+            for subView in UIApplication.shared.keyWindow!.subviews
+            {
+                if let viewPopup = subView as? UIViewPopup
+                {
+                    viewPopup.removeFromSuperview()
+                }
+            }
+
+            // and then add new popups
             for subView in self.superview!.subviews
             {
                 if let control = subView as? UITextFieldExtendedView
@@ -130,12 +143,9 @@ import QuartzCore
                             control.displayMultiPopup()
                         }
                     }
-                    else
-                    {
-                        control.removePopup()
-                    }
                 }
             }
+
         }
         
         // if we should show glowing border, handle that
@@ -177,13 +187,16 @@ extension UIView
         self.endEditing(true)
         
         // now take care of any TextFieldPopupView
-        for subView in self.subviews
+        
+        for subView in UIApplication.shared.keyWindow!.subviews //self.subviews
         {
-            if let control = subView as? UITextFieldExtendedView
+            if let viewPopup = subView as? UIViewPopup
             {
-                control.removePopup()
+                viewPopup.removeFromSuperview()
             }
         }
+        
+
     }
     
 }

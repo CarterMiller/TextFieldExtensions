@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C2AB422B1E31047D00DF37CD /* UITextFieldExtendedViewFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB422A1E31047D00DF37CD /* UITextFieldExtendedViewFloat.swift */; };
-		C2AB422D1E31049200DF37CD /* UITextFieldExtendedViewGlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB422C1E31049200DF37CD /* UITextFieldExtendedViewGlow.swift */; };
-		C2AB426A1E3374E400DF37CD /* UITextFieldExtendedMultiPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB42691E3374E400DF37CD /* UITextFieldExtendedMultiPopup.swift */; };
+		C2AB427A1E35F3BB00DF37CD /* UITextFieldExtendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB42751E35F3BB00DF37CD /* UITextFieldExtendedView.swift */; };
+		C2AB427B1E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB42761E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift */; };
+		C2AB427C1E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB42771E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift */; };
+		C2AB427D1E35F3BB00DF37CD /* UITextFieldExtendedViewPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB42781E35F3BB00DF37CD /* UITextFieldExtendedViewPopup.swift */; };
+		C2AB427E1E35F3BB00DF37CD /* UITextFieldExtendedMultiPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB42791E35F3BB00DF37CD /* UITextFieldExtendedMultiPopup.swift */; };
 		C2B8A7AA1E2E955800BA0777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8A7A91E2E955800BA0777 /* AppDelegate.swift */; };
 		C2B8A7B11E2E955800BA0777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B8A7B01E2E955800BA0777 /* Assets.xcassets */; };
 		C2B8A7B41E2E955800BA0777 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B8A7B21E2E955800BA0777 /* LaunchScreen.storyboard */; };
-		C2B8A7BE1E2E956C00BA0777 /* UITextFieldExtendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8A7BB1E2E956C00BA0777 /* UITextFieldExtendedView.swift */; };
 		C2B8A7C71E2E95D600BA0777 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8A7C61E2E95D600BA0777 /* ViewController.swift */; };
 		C2B8A7CA1E2E95ED00BA0777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B8A7C81E2E95ED00BA0777 /* Main.storyboard */; };
-		C2E3B6661E3102E20048ACAC /* UITextFieldExtendedViewPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E3B6651E3102E20048ACAC /* UITextFieldExtendedViewPopup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C2AB422A1E31047D00DF37CD /* UITextFieldExtendedViewFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedViewFloat.swift; sourceTree = "<group>"; };
-		C2AB422C1E31049200DF37CD /* UITextFieldExtendedViewGlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedViewGlow.swift; sourceTree = "<group>"; };
-		C2AB42691E3374E400DF37CD /* UITextFieldExtendedMultiPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedMultiPopup.swift; sourceTree = "<group>"; };
+		C2AB42751E35F3BB00DF37CD /* UITextFieldExtendedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedView.swift; sourceTree = "<group>"; };
+		C2AB42761E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedViewFloat.swift; sourceTree = "<group>"; };
+		C2AB42771E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedViewGlow.swift; sourceTree = "<group>"; };
+		C2AB42781E35F3BB00DF37CD /* UITextFieldExtendedViewPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedViewPopup.swift; sourceTree = "<group>"; };
+		C2AB42791E35F3BB00DF37CD /* UITextFieldExtendedMultiPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedMultiPopup.swift; sourceTree = "<group>"; };
 		C2B8A7A61E2E955800BA0777 /* TextFieldExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextFieldExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B8A7A91E2E955800BA0777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2B8A7B01E2E955800BA0777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2B8A7B31E2E955800BA0777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2B8A7B51E2E955800BA0777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2B8A7BB1E2E956C00BA0777 /* UITextFieldExtendedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedView.swift; sourceTree = "<group>"; };
 		C2B8A7C61E2E95D600BA0777 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C2B8A7C91E2E95ED00BA0777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C2E3B6651E3102E20048ACAC /* UITextFieldExtendedViewPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedViewPopup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +64,13 @@
 		C2B8A7A81E2E955800BA0777 /* TextFieldExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				C2B8A7C61E2E95D600BA0777 /* ViewController.swift */,
 				C2B8A7C81E2E95ED00BA0777 /* Main.storyboard */,
-				C2B8A7BB1E2E956C00BA0777 /* UITextFieldExtendedView.swift */,
-				C2AB422A1E31047D00DF37CD /* UITextFieldExtendedViewFloat.swift */,
-				C2AB422C1E31049200DF37CD /* UITextFieldExtendedViewGlow.swift */,
-				C2E3B6651E3102E20048ACAC /* UITextFieldExtendedViewPopup.swift */,
-				C2AB42691E3374E400DF37CD /* UITextFieldExtendedMultiPopup.swift */,
+				C2AB42751E35F3BB00DF37CD /* UITextFieldExtendedView.swift */,
+				C2AB42761E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift */,
+				C2AB42771E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift */,
+				C2AB42781E35F3BB00DF37CD /* UITextFieldExtendedViewPopup.swift */,
+				C2AB42791E35F3BB00DF37CD /* UITextFieldExtendedMultiPopup.swift */,
+				C2B8A7C61E2E95D600BA0777 /* ViewController.swift */,
 				C2B8A7A91E2E955800BA0777 /* AppDelegate.swift */,
 				C2B8A7B01E2E955800BA0777 /* Assets.xcassets */,
 				C2B8A7B21E2E955800BA0777 /* LaunchScreen.storyboard */,
@@ -152,13 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2E3B6661E3102E20048ACAC /* UITextFieldExtendedViewPopup.swift in Sources */,
+				C2AB427D1E35F3BB00DF37CD /* UITextFieldExtendedViewPopup.swift in Sources */,
+				C2AB427C1E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift in Sources */,
+				C2AB427A1E35F3BB00DF37CD /* UITextFieldExtendedView.swift in Sources */,
 				C2B8A7C71E2E95D600BA0777 /* ViewController.swift in Sources */,
-				C2AB422D1E31049200DF37CD /* UITextFieldExtendedViewGlow.swift in Sources */,
-				C2B8A7BE1E2E956C00BA0777 /* UITextFieldExtendedView.swift in Sources */,
-				C2AB426A1E3374E400DF37CD /* UITextFieldExtendedMultiPopup.swift in Sources */,
+				C2AB427E1E35F3BB00DF37CD /* UITextFieldExtendedMultiPopup.swift in Sources */,
+				C2AB427B1E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift in Sources */,
 				C2B8A7AA1E2E955800BA0777 /* AppDelegate.swift in Sources */,
-				C2AB422B1E31047D00DF37CD /* UITextFieldExtendedViewFloat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

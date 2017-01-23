@@ -36,13 +36,15 @@ You can then set which of the extended attributes you want, either in the storyb
 ![Floating Text](https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/Floating%20Text.png)
 
 ## TextFieldPopupView
+
+### Simple popup
 - shouldDisplayPopup    = true
 - shouldDisplayLabel    = true / false
 - shouldDisplayGlow     = false
 
 ![Popup](https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/Popup.png)
 
-
+### Glowing popup
 - shouldDisplayPopup    = true
 - shouldDisplayLabel    = true / false
 - shouldDisplayGlow     = true
@@ -50,13 +52,14 @@ You can then set which of the extended attributes you want, either in the storyb
 ![Popup GLowing](https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/Popup%20Glowing.png)
 
 
+### Multi-select popup
 - shouldDisplayPopup    = true
 - shouldDisplayLabel    = true / false
 - shouldDisplayGlow     = true
 - define dataSet and also dataSetSelected
 
 
-![MultiSelect](https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/MultiSelect.png)
+![MultiSelect](https://github.com/CarterMiller/TextFieldExtensions/blob/master/screenshots/PopupMultiSelect.png)
 
 ### Initialisation
 - By default, the control will display 5 lines in the popup view, but you can change that in Storyboard, or through code at any time.  You will not be able to display more than 12 lines, or fewer than 1.

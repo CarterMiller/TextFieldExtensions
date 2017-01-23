@@ -55,36 +55,41 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextFieldExtended
     
     // UITextFieldExtendedDelegate
     
-    func multiPopupUpdated(valueReturn: [String], controlTag: Int, valueChanged: Bool)
+    func multiPopupUpdated(valueReturn: [String], control: UITextFieldExtendedView, valueChanged: Bool)
     {
         var text : String = ""
-        
-        for textReturn in valueReturn
+
+        for dataEntry in valueReturn
         {
-            text = text + textReturn
+            text += dataEntry
             
+            if dataEntry != valueReturn.last
+            {
+                text += ", "
+            }
         }
-        if controlTag == 5
+
+        if control.tag == 5
         {
-            textField6.text = text
+            control.text = text
         }
     }
     
-    func popupPickerViewChanged(valueReturn : String, controlTag : Int, valueChanged : Bool)
+    func popupPickerViewChanged(valueReturn : String, control : UITextFieldExtendedView, valueChanged : Bool)
     {
         if valueChanged == false
         {
             return
         }
-        if controlTag == 1
+        if control.tag == 1
         {
             // do something for control 1
         }
-        if controlTag == 2
+        if control.tag == 2
         {
             // do something for control 2
         }
-        if controlTag == 3
+        if control.tag == 3
         {
             // do something for control 3
         }

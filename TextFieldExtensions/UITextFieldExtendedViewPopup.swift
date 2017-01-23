@@ -209,7 +209,7 @@ extension UITextFieldExtendedView : UIPickerViewDelegate, UIPickerViewDataSource
         
         if delegatePopup != nil
         {
-            delegatePopup!.popupPickerViewChanged!(valueReturn: dataSet[row], controlTag: self.tag, valueChanged: (dataSet[row] != valueInit))
+            delegatePopup!.popupPickerViewChanged!(valueReturn: dataSet[row], control: self, valueChanged: (dataSet[row] != valueInit))
         }
         
         valueInit = dataSet[row]

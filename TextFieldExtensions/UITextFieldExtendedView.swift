@@ -12,9 +12,8 @@ import QuartzCore
 
 @objc protocol UITextFieldExtendedDelegate
 {
-    // only really required for the popup view, but available for everything
-    @objc optional func popupPickerViewChanged(valueReturn : String, controlTag: Int, valueChanged : Bool)
-    @objc optional func multiPopupUpdated(valueReturn : [String], controlTag: Int, valueChanged : Bool)
+    @objc optional func popupPickerViewChanged(valueReturn : String, control : UITextFieldExtendedView, valueChanged : Bool)
+    @objc optional func multiPopupUpdated(valueReturn : [String], control : UITextFieldExtendedView, valueChanged : Bool)
 }
 
 @IBDesignable class UITextFieldExtendedView: UITextField

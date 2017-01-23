@@ -239,7 +239,7 @@ extension UITextFieldExtendedView
             }
         }
         
-        delegatePopup!.multiPopupUpdated!(valueReturn: returnArray, controlTag: self.tag, valueChanged: true)
+        delegatePopup!.multiPopupUpdated!(valueReturn: returnArray, control: self, valueChanged: true)
 
         self.removePopup()
     }

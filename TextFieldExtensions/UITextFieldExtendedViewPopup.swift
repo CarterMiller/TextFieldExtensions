@@ -86,6 +86,7 @@ extension UITextFieldExtendedView : UIPickerViewDelegate, UIPickerViewDataSource
         _ = self.resignFirstResponder()
         
         
+        
         // find the position on the main screen
         let globalPoint = self.superview?.convert(self.frame.origin, to: nil)
         
@@ -162,10 +163,28 @@ extension UITextFieldExtendedView : UIPickerViewDelegate, UIPickerViewDataSource
         
      //   self.superview?.addSubview(viewPopup)
         
+        // RM 29/04/17
+        // add a little cross to close down the control
+        let btnClose = UIButton(type: UIButtonType.custom)
+        btnClose.setTitleColor(.gray, for: .normal)
+        btnClose.setTitle("x", for: UIControlState.normal)
+        //btnClose.setImage(UIImage(named: "cancel.png"), for: .normal) //provide image if required
+        btnClose.frame = CGRect(x: width - 32, y: 0, width: 32, height: 32)
+        
+        btnClose.addTarget(self, action:#selector(cmdClose), for:.touchUpInside)
+        viewPopup.addSubview(btnClose)
+        
+
+        
         UIApplication.shared.keyWindow?.addSubview(viewPopup)
 
     }
     
+    func cmdClose()
+    {
+        self.removePopup()
+    }
+
     func findIndexInitial() -> Int
     {
         for (index, val) in dataSet.enumerated()

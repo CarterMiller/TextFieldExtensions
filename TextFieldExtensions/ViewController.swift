@@ -41,6 +41,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextFieldExtended
         
     }
     
+    
     func backgroundTapped(_ sender: UITapGestureRecognizer)
     {
         view.endEditingWithPopups(true)       // end editing for any UITextField controls, and also for standard controls
@@ -52,7 +53,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextFieldExtended
         self.view.endEditing(true)
         return false
     }
-    
+
     // UITextFieldExtendedDelegate
     
     func multiPopupUpdated(valueReturn: [String], control: UITextFieldExtendedView, valueChanged: Bool)

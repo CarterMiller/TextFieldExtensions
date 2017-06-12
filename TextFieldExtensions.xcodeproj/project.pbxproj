@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C28D853A1EEEE03400AD08EE /* UITextViewExtendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D85391EEEE03400AD08EE /* UITextViewExtendedView.swift */; };
+		C28D853E1EEEE10000AD08EE /* UITextViewExtendedViewGlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D853D1EEEE10000AD08EE /* UITextViewExtendedViewGlow.swift */; };
 		C2AB427A1E35F3BB00DF37CD /* UITextFieldExtendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB42751E35F3BB00DF37CD /* UITextFieldExtendedView.swift */; };
 		C2AB427B1E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB42761E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift */; };
 		C2AB427C1E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB42771E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C28D85391EEEE03400AD08EE /* UITextViewExtendedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewExtendedView.swift; sourceTree = "<group>"; };
+		C28D853D1EEEE10000AD08EE /* UITextViewExtendedViewGlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewExtendedViewGlow.swift; sourceTree = "<group>"; };
 		C2AB42751E35F3BB00DF37CD /* UITextFieldExtendedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedView.swift; sourceTree = "<group>"; };
 		C2AB42761E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedViewFloat.swift; sourceTree = "<group>"; };
 		C2AB42771E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtendedViewGlow.swift; sourceTree = "<group>"; };
@@ -45,6 +49,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C28D853F1EEEE11C00AD08EE /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				C28D85391EEEE03400AD08EE /* UITextViewExtendedView.swift */,
+				C28D853D1EEEE10000AD08EE /* UITextViewExtendedViewGlow.swift */,
+			);
+			name = TextView;
+			sourceTree = "<group>";
+		};
+		C28D85401EEEE12600AD08EE /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				C2AB42751E35F3BB00DF37CD /* UITextFieldExtendedView.swift */,
+				C2AB42761E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift */,
+				C2AB42771E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift */,
+				C2AB42781E35F3BB00DF37CD /* UITextFieldExtendedViewPopup.swift */,
+				C2AB42791E35F3BB00DF37CD /* UITextFieldExtendedMultiPopup.swift */,
+			);
+			name = TextField;
+			sourceTree = "<group>";
+		};
 		C2B8A79D1E2E955800BA0777 = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				C2B8A7C81E2E95ED00BA0777 /* Main.storyboard */,
-				C2AB42751E35F3BB00DF37CD /* UITextFieldExtendedView.swift */,
-				C2AB42761E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift */,
-				C2AB42771E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift */,
-				C2AB42781E35F3BB00DF37CD /* UITextFieldExtendedViewPopup.swift */,
-				C2AB42791E35F3BB00DF37CD /* UITextFieldExtendedMultiPopup.swift */,
+				C28D853F1EEEE11C00AD08EE /* TextView */,
+				C28D85401EEEE12600AD08EE /* TextField */,
 				C2B8A7C61E2E95D600BA0777 /* ViewController.swift */,
 				C2B8A7A91E2E955800BA0777 /* AppDelegate.swift */,
 				C2B8A7B01E2E955800BA0777 /* Assets.xcassets */,
@@ -153,9 +175,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2AB427D1E35F3BB00DF37CD /* UITextFieldExtendedViewPopup.swift in Sources */,
+				C28D853A1EEEE03400AD08EE /* UITextViewExtendedView.swift in Sources */,
 				C2AB427C1E35F3BB00DF37CD /* UITextFieldExtendedViewGlow.swift in Sources */,
 				C2AB427A1E35F3BB00DF37CD /* UITextFieldExtendedView.swift in Sources */,
 				C2B8A7C71E2E95D600BA0777 /* ViewController.swift in Sources */,
+				C28D853E1EEEE10000AD08EE /* UITextViewExtendedViewGlow.swift in Sources */,
 				C2AB427E1E35F3BB00DF37CD /* UITextFieldExtendedMultiPopup.swift in Sources */,
 				C2AB427B1E35F3BB00DF37CD /* UITextFieldExtendedViewFloat.swift in Sources */,
 				C2B8A7AA1E2E955800BA0777 /* AppDelegate.swift in Sources */,
